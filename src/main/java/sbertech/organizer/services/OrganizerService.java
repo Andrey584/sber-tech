@@ -39,6 +39,11 @@ public class OrganizerService {
         }
     }
 
+    /**
+     * Метод для определения типа действия
+     *
+     * @return тип действия
+     */
     public ActionType chooseAction() {
         System.out.println("================================================================================");
         System.out.println("Выберите тип действия: ");
@@ -58,6 +63,12 @@ public class OrganizerService {
 
     }
 
+    /**
+     * Метод для установления параметров по заданным типам параметров
+     *
+     * @param employeeParamType список типов параметров
+     * @return заполненные параметры
+     */
     public Map<EmployeeParamType, String> fillParamsData(List<EmployeeParamType> employeeParamType) {
         Map<EmployeeParamType, String> result = new HashMap<>();
         System.out.println("================================================================================");

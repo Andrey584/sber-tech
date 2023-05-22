@@ -31,7 +31,6 @@ public class EmployeeRepositoryService {
             StringWriter writer = new StringWriter();
             marshaller.marshal(employeeList, writer);
             marshaller.marshal(employeeList, storage.getFile());
-            //todo перезапись
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
         }

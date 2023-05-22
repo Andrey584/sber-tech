@@ -8,7 +8,9 @@ import sbertech.organizer.enums.ActionType;
 import sbertech.organizer.enums.EmployeeParamType;
 import sbertech.organizer.services.EmployeeRepositoryService;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,8 +34,15 @@ public class UpdateActionHandler implements EmployeeActionHandler {
         return "Пользователь успешно обновлен!";
     }
 
+    /**
+     * Метод для обновления пользователя
+     *
+     * @param employee пользователь
+     * @param params   параметры
+     * @return обновленный пользователь
+     */
     public Employee updateEmployeeData(Employee employee, Map<EmployeeParamType, String> params) {
-        if(!employee.getNumber().equals(params.get(EmployeeParamType.NUMBER))) {
+        if (!employee.getNumber().equals(params.get(EmployeeParamType.NUMBER))) {
             return employee;
         }
         employee.setNumber(params.get(EmployeeParamType.NUMBER));

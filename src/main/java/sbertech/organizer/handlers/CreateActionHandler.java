@@ -2,10 +2,10 @@ package sbertech.organizer.handlers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sbertech.organizer.enums.ActionType;
 import sbertech.organizer.beans.Employee;
-import sbertech.organizer.enums.EmployeeParamType;
 import sbertech.organizer.beans.EmployeeList;
+import sbertech.organizer.enums.ActionType;
+import sbertech.organizer.enums.EmployeeParamType;
 import sbertech.organizer.services.EmployeeRepositoryService;
 
 import java.util.Arrays;
@@ -43,6 +43,12 @@ public class CreateActionHandler implements EmployeeActionHandler {
         return ActionType.CREATE;
     }
 
+    /**
+     * Метод для установления всех значений пользователю
+     *
+     * @param params параметры
+     * @return обновленный пользователь
+     */
     private Employee getEmployee(Map<EmployeeParamType, String> params) {
         Employee employee = new Employee();
         employee.setNumber(params.get(EmployeeParamType.NUMBER));
