@@ -20,12 +20,6 @@ public enum ActionType {
         this.name = name;
     }
 
-    /**
-     * Метод для определения типа действия на основании кода типа действия
-     *
-     * @param code код действия
-     * @return тип действия
-     */
     public static ActionType getByCode(Integer code) {
         return Arrays.stream(ActionType.values())
                 .filter(action -> action.code.equals(code))
@@ -33,9 +27,6 @@ public enum ActionType {
                 .orElse(UNKNOWN);
     }
 
-    /**
-     * @return Список типов действия
-     */
     public static List<ActionType> getValues() {
         return Arrays.stream(values())
                 .filter(t -> !t.equals(ActionType.UNKNOWN))

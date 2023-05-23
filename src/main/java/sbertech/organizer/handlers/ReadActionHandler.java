@@ -60,12 +60,7 @@ public class ReadActionHandler implements EmployeeActionHandler {
         return ActionType.READ;
     }
 
-    /**
-     * Метод проверки строки на наличие численного значения
-     *
-     * @param strNum строка со значением
-     * @return результат
-     */
+
     private boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;
@@ -73,13 +68,6 @@ public class ReadActionHandler implements EmployeeActionHandler {
         return pattern.matcher(strNum).matches();
     }
 
-    /**
-     * Метод для определения
-     *
-     * @param e      пользователь
-     * @param params параметры
-     * @return результат
-     */
     private boolean isMatchesConstraint(Employee e, Map<EmployeeParamType, String> params) {
         String numberValue = params.get(EmployeeParamType.NUMBER);
         String nameValue = params.get(EmployeeParamType.NAME);
@@ -95,6 +83,4 @@ public class ReadActionHandler implements EmployeeActionHandler {
                 && (addressValue == null || addressValue.equals(e.getAddress()))
                 && (phoneNumbersValue == null || e.getPhoneNumbers().contains(phoneNumbersValue));
     }
-
-
 }

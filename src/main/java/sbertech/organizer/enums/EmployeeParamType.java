@@ -29,12 +29,6 @@ public enum EmployeeParamType {
         return name;
     }
 
-    /**
-     * Метод для определения параметра по коду
-     *
-     * @param code код параметра
-     * @return параметр
-     */
     public static EmployeeParamType getByCode(Integer code) {
         return Arrays.stream(EmployeeParamType.values())
                 .filter(e -> e.code.equals(code))
@@ -42,11 +36,6 @@ public enum EmployeeParamType {
                 .orElse(UNKNOWN);
     }
 
-    /**
-     * Метод для возврата всех параметров
-     *
-     * @return список параметров
-     */
     public static List<EmployeeParamType> getValues() {
         return Arrays.stream(values())
                 .filter(t -> !t.equals(EmployeeParamType.UNKNOWN))

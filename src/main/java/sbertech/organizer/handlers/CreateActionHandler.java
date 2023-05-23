@@ -43,12 +43,6 @@ public class CreateActionHandler implements EmployeeActionHandler {
         return ActionType.CREATE;
     }
 
-    /**
-     * Метод для установления всех значений пользователю
-     *
-     * @param params параметры
-     * @return обновленный пользователь
-     */
     private Employee getEmployee(Map<EmployeeParamType, String> params) {
         Employee employee = new Employee();
         employee.setNumber(params.get(EmployeeParamType.NUMBER));
@@ -63,7 +57,6 @@ public class CreateActionHandler implements EmployeeActionHandler {
                         .map(String::trim)
                         .collect(Collectors.toList())
         );
-
 
         return employee;
     }

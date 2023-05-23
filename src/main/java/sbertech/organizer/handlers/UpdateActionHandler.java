@@ -34,13 +34,7 @@ public class UpdateActionHandler implements EmployeeActionHandler {
         return "Пользователь успешно обновлен!";
     }
 
-    /**
-     * Метод для обновления пользователя
-     *
-     * @param employee пользователь
-     * @param params   параметры
-     * @return обновленный пользователь
-     */
+
     public Employee updateEmployeeData(Employee employee, Map<EmployeeParamType, String> params) {
         if (!employee.getNumber().equals(params.get(EmployeeParamType.NUMBER))) {
             return employee;
