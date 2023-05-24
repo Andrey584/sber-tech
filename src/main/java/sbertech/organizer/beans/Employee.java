@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
 
-@XmlType(name = "user")
+@XmlType(name = "employee")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Employee implements Serializable {
 
